@@ -1,2 +1,2 @@
-# NodeJS-study
-Study and preparation of NodeJS code
+# Common JavaScript-study
+Study and preparation of Javascript code
