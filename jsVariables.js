@@ -19,7 +19,7 @@
 
     5.  Hoisting of var - Variables declared with the var keyword are subject to hoisting. 
         If we declare a variable (but do not initialize it) at the end of the function, 
-        the JavaScript runtime will move it to the top of its scope and, therefore, 
+        the JavaScript runtime will move it to the top of its scope and initialize it with "undefined", therefore, 
         there will be no complaint by the runtime if we use that variable before being declared.
 
     6.  Problem with var - Since var can be re-declared and updated, developers can unknowingly declare
@@ -88,7 +88,10 @@ console.log(sayhi) // "say Hello instead"
 
     2.  let can be updated but not re-declared.
 
-    3.  Hoisting of let
+    3.  Hoisting of let. Variables with "let" also get hoisted. 
+        The difference is that let gets hoisted to the block scope and remains uninitialized , 
+        that's why we get an error if we try to access it before its assignment. 
+        This is known as the "temporal dead zone".
 
 */  
 
@@ -144,7 +147,10 @@ console.log(newestgreeting); // "say Hi"
 
     2.  const can neither be updated but nor re-declared.
 
-    3.  Hoisting of const
+    3.  Hoisting of const. Variables with "const" also get hoisted. 
+        The difference is that const gets hoisted to the block scope and remains uninitialized , 
+        that's why we get an error if we try to access it before its assignment. 
+        This is known as the "temporal dead zone".
 
     4. objects declared with const behave differently
 
@@ -204,3 +210,10 @@ developer.age = 45;
 developer.language = ["C#","Python","PHP","NodeJS","Javascript"];
 
 console.log(developer)
+
+// Another example:
+const c = [1,2]
+c.push(3)
+console.log(c); // This would give us [1,2,3]
+// So we can modifiy the value but we cannot reassign the const variable and thus
+// c = [1,2,3] // This would give an error
