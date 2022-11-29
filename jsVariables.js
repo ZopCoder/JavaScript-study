@@ -39,7 +39,7 @@ function greetUser() {
 }
 greetUser();
 console.log(greetings);
-// console.log(hi); // Throw error as hi variable cannot be accessed outside the function
+// console.log(hi); // Throws error as hi variable cannot be accessed outside the function
 
 // 3
 function checkX(){
